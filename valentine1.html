@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>I Love You 💕</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffc1cc);
+            overflow: hidden;
+            color: white;
+        }
+
+        .container {
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            max-width: 90%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            min-height: 60px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-weight: normal;
+            font-size: 1.2rem;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .yes-btn {
+            background-color: #ff2e63;
+            color: white;
+        }
+
+        .yes-btn:hover {
+            background-color: #e6004c;
+            transform: scale(1.1);
+        }
+
+        .no-btn {
+            background-color: white;
+            color: #ff2e63;
+        }
+
+        .no-btn:hover {
+            background-color: #ffe6ec;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            h2 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="loveText"></h1>
+
+        <h2>I really miss you, I wish we could be together this Valentine's Day 💕</h2>
+
+        <div class="buttons">
+            <button class="yes-btn" onclick="location.href='accept.html'">Yes 💘</button>
+            <button class="no-btn" onclick="location.href='valentine2.html'">No 💔</button>
+        </div>
+    </div>
+
+    <script>
+        const messages = [
+            "I love you, I miss you 🇺🇸",
+            "Te amo, te extraño 🇪🇸",
+            "Je t’aime, tu me manques 🇫🇷",
+            "Ich liebe dich, ich vermisse dich 🇩🇪",
+            "Ti amo, mi manchi 🇮🇹",
+            "Eu te amo, sinto sua falta 🇵🇹",
+            "Eu te amo, sinto sua falta 🇧🇷",
+            "मैं तुमसे प्यार करता हूँ, मुझे तुम्हारी याद आती है 🇮🇳",
+            "আমি তোমায় ভালোবাসি, তোমাকে মিস করি 🇧🇩",
+            "আমি তোমাকে ভালোবাসি, তোমাকে মিস করি 🇮🇳",
+            "愛してる、会いたい 🇯🇵",
+            "사랑해, 보고 싶어 🇰🇷",
+            "我爱你，我想你 🇨🇳",
+            "Aku cinta kamu, aku merindukanmu 🇮🇩",
+            "Seni seviyorum, seni özledim 🇹🇷",
+            "Я люблю тебя, я скучаю по тебе 🇷🇺",
+            "أحبك، أفتقدك 🇸🇦",
+            "Σ' αγαπώ, μου λείπεις 🇬🇷",
+            "Ik hou van je, ik mis je 🇳🇱",
+            "Jag älskar dig, jag saknar dig 🇸🇪",
+            "Jeg elsker deg, jeg savner deg 🇳🇴",
+            "Kocham cię, tęsknię za tobą 🇵🇱",
+            "Anh yêu em, anh nhớ em 🇻🇳",
+            "ผมรักคุณ ผมคิดถึงคุณ 🇹🇭",
+            "Szeretlek, hiányzol 🇭🇺"
+        ];
+
+        const textElement = document.getElementById("loveText");
+        let index = 0;
+
+        function showMessage() {
+            textElement.style.opacity = 0;
+
+            setTimeout(() => {
+                textElement.textContent = messages[index];
+                textElement.style.opacity = 1;
+                index = (index + 1) % messages.length;
+            }, 1000);
+        }
+
+        showMessage();
+        setInterval(showMessage, 3000);
+    </script>
+
+</body>
+</html>
